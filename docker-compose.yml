@@ -1,0 +1,10 @@
+version: "3.8" # Utiliza la versión 3.8 de Docker Compose
+services:
+  web:
+    container_name: one-web # Nombre del servicio, puedes cambiarlo según prefieras
+    build: . # Indica a Docker Compose que construya la imagen desde el Dockerfile en el directorio actual
+    ports:
+      - "3000:3000" # Mapea el puerto 3000 del contenedor al puerto 3000 en tu host
+    volumes:
+      - .:/app # Monta el directorio actual en el directorio /app del contenedor para desarrollo
+    command: yarn dev # Comando para iniciar la aplicación en modo desarrollo
